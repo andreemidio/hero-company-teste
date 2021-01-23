@@ -17,5 +17,5 @@ Disponibilizei uma documentação auxiliar para facilitar o entendimento que est
 em [Swagger](https://hero-company-teste.herokuapp.com/swagger)
 e [Redoc](https://hero-company-teste.herokuapp.com/redoc/)
 
-Para fazer testes simples como o [Postman](https://www.getpostman.com/collections/bd578ba3868f550f4f4a)
+Para fazer testes simples como o [Postman](https://documenter.getpostman.com/view/10291528/TW6tLVHU)
 
