@@ -93,21 +93,11 @@ TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'templates'),)
 WSGI_APPLICATION = 'config.wsgi.application'
 
 # Database
-# https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
-# Database
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 default_db_url = 'sqlite:///' + os.path.join(BASE_DIR, 'company.sqlite3')
 
 if 'localhost' not in ALLOWED_HOSTS:
-    dburl = partial(dburl, conn_max_age=600, ssl_require=True)
+    dburl = partial(dburl, conn_max_age=600, ssl_require=False)
 
 DATABASES = {
     'default': config('DATABASE_URL', default=default_db_url, cast=dburl),
