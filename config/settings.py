@@ -49,7 +49,7 @@ DJANGO_APPS = [
 THIRD_APPS = [
     'rest_framework',
     'drf_yasg',
-    'sortedm2m'
+    'sortedm2m',
 ]
 
 LOCAL_APPS = [
@@ -61,6 +61,7 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_APPS + LOCAL_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -130,7 +131,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
@@ -154,3 +154,4 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'

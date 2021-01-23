@@ -34,7 +34,6 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path(r'lotus/', admin.site.urls),
-    path(r'admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
 
     path('empresas/', include('apps.empresas.urls', namespace='empresas')),
     path('funcionarios/', include('apps.funcionarios.urls', namespace='funcionarios')),

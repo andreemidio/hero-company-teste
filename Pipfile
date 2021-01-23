@@ -12,7 +12,7 @@ dj-database-url = "*"
 python-decouple = "*"
 psycopg2-binary = "*"
 gunicorn = "*"
-django-admin-honeypot = "*"
+whitenoise = "*"
 
 [dev-packages]
 
