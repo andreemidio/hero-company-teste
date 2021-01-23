@@ -16,8 +16,10 @@ whitenoise = "*"
 gevent = "*"
 psycogreen = "*"
 greenlet = "*"
+drf-writable-nested = "*"
 
 [dev-packages]
+scanapi = "*"
 
 [requires]
 python_version = "3.8"

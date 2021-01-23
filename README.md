@@ -19,3 +19,8 @@ e [Redoc](https://hero-company-teste.herokuapp.com/redoc/)
 
 Para fazer testes simples como o [Postman](https://documenter.getpostman.com/view/10291528/TW6tLVHU)
 
+Caso queira acessar o [banco de dados](https://hero-company-teste.herokuapp.com/lotus/)  use:
+
+Login : andre@companyhero.com
+Senha : sWVWL0$L#&Cf0
+
