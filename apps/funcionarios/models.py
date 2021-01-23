@@ -54,6 +54,6 @@ class Funcionarios(AbstractBaseUser, PermissionsMixin):
         return 'Sim' if self.is_active else 'Não'
 
     class Meta:
-        verbose_name = 'Usuario'
-        verbose_name_plural = 'Usuarios'
+        verbose_name = 'Funcionario'
+        verbose_name_plural = 'Funcionarios'
         ordering = ['-data_criacao']
