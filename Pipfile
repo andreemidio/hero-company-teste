@@ -1,0 +1,20 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+djangorestframework = "*"
+drf-yasg = {extras = ["validation"], version = "*"}
+django-sortedm2m = "*"
+dj-database-url = "*"
+python-decouple = "*"
+psycopg2-binary = "*"
+gunicorn = "*"
+django-admin-honeypot = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"
