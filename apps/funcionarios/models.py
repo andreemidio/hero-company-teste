@@ -35,6 +35,9 @@ class Funcionarios(AbstractBaseUser, PermissionsMixin):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     nome_sobrenome = models.CharField(max_length=255, blank=True, null=True)
     email = models.EmailField(unique=True, max_length=255)
+    is_superuser = models.BooleanField(default=False, blank=True, null=True)
+    is_staff = models.BooleanField(default=False, blank=True, null=True)
+    is_active = models.BooleanField(default=True)
     data_criacao = models.DateTimeField(auto_now_add=True)
 
     USERNAME_FIELD = 'email'
