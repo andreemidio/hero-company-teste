@@ -1,6 +1,6 @@
 endpoints:
   - name: Company Hero Test
-    path:  ${BASE_URL}
+    path:  https://hero-company-teste.herokuapp.com/
     requests:
       - name: home
         method: get

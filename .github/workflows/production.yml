@@ -1,4 +1,4 @@
-name: UnidocSign Backend Production CI
+name: Company Hero Test Backend Production CI
 
 on:
   pull_request:
