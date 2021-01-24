@@ -1,0 +1,2150 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+
+    <title>ScanAPI Report</title>
+    <meta name="description" content="ScanAPI Report" />
+    <meta name="author" content="scanapi/scanapi" />
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAB11BMVEX////8/Pzn6erKzdCyt7qkqq6dpKiepKilq660ubzN0NLq6+z9/f3e4OGXnqJzfYN4gYeIkJWUnKCaoaWUm5+GjpR3gIZ1foTk5ufN0dNyfIKQl5zQ1dfw8/T7/f3+///6/P3u8fLLz9KJkZbX2tvp6+ynrbH5+fn/z8r/ta7/tq//tq7/4t/19/iboqZ/iI3x8vK3vL99hYvy8vP/xsD/qaD/qqL/qqH/3Nl1f4XFycyWnaJueH6co6ecpKidpKmepamdpamepKlpc3qlq6/+/v69wcSZoKRrdXuLk5iAiI5/h41zfIJ5goiUm6BocnmTmp+do6fFycvX2du7wMO5vcCrsbXs7u6Ci5D4+fmCipDz9PXIzM7r7O35+vrq7O3w8fLHy87v8PFcZ26tsrb6+/vs7e68wMNbZm27v8Lm6Ol2f4XMz9H4+PmGj5Tb3d+5vsGfpant7u/e4OKSmZ7AxMeAiY7u8PC6v8G6v8Jud36EjJHy8/ONlJnDx8rZ3N2DjJF8hIp8hYuzuLzR1Nba3d/KztB8hYqyuLv8/f3a3d7V2Nr6+vr3+PiHj5SqsLTd3+DT1tiRmJ3o6epsdnz4+Pi4vcCPl5vQ09VveH/o6uunrbDz9PRPvQCIAAAAAWJLR0QAiAUdSAAAAAd0SU1FB+QHGRE1H+ztMTUAAAEqSURBVDjLY2AYWoCRiZmFlY2dg5OLmwebPC8fv4CgkLCwiKiYOJsEpryklLSMrJw8A4O8gqKSspgKuryqmJq6hqaWNhBoaeno6ukboCkwNDJmMDE1AwNzCwZuSys0BdY2tux29g62Dva2jva2TnrOLqjyrm627h6eXjbCNt5sPr5+/gGBQRiuVFcODpFmlA5lsA0Lj+DG4s1IJAVRNFAQHRMbh6wgPiExCUVBTHJKKrKCtPSMTBQFWdk5uXn5mUAFBYyehUURTMU+qIHNWFKaX1ZeAVRQWVRVXVNbV9+AFtbMjU3NDKEgExhaWhnamto70FzZ2dXdA1TQ29cP4vFMmBiJLUmETpo8JWoqA24wbXpk0AxX3PKuwjNnMeADrrPL8CtgUJ/DMDQBAC0gTAcOoWsNAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDIwLTA3LTI1VDE1OjUzOjMxKzAyOjAwcHYhkAAAACV0RVh0ZGF0ZTptb2RpZnkAMjAyMC0wNy0yNVQxNTo1MzozMSswMjowMAErmSwAAAAASUVORK5CYII=">
+</head>
+
+<body>
+    <style type="text/css">
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #eeeeee;
+            font-size: 18px;
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+                "Helvetica Neue", Arial, sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: #636c73;
+            font-weight: bold;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 21px;
+        }
+
+        details {
+            margin-top: 20px;
+            position: relative;
+        }
+
+        details div {
+            background-color: #f5f5f5;
+            padding: 20px 20px;
+            border-radius: 10px;
+        }
+
+        summary {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        table {
+            border-radius: 20px;
+        }
+
+        table,
+        td,
+        th {
+            border: 1px solid #ccc;
+            text-align: left;
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: #f5f5f5;
+            text-align: center;
+            padding: 8px 10px;
+        }
+
+        td {
+            text-align: left;
+            padding: 8px 10px;
+        }
+
+        /* Wrapper */
+        .wrapper {
+            background-color: white;
+            border-radius: 8px;
+            padding-bottom: 20px;
+        }
+
+        /* END -- Wrapper */
+
+        /* Title */
+        .title {
+            border-bottom: 8px solid #eeeeee;
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+
+        .title__name {
+            margin: 0 0 10px 0;
+            padding: 0;
+            font-size: 36px;
+            font-weight: 300;
+        }
+
+        .title__project {
+            font-weight: bold;
+            color: #F67164;
+        }
+
+        .title__overview {
+            padding: 0;
+            margin: 0;
+            font-size: 16px;
+            color: #636c73;
+            text-align: center;
+        }
+
+        /* END -- Title */
+
+        /* HEADER */
+        .header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header__image {
+            width: 250px;
+            margin: 20px 0;
+        }
+
+        .github {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .github__svg {
+            width: 30px;
+        }
+
+        .wrapper,
+        .header {
+            width: 1150px;
+            margin: auto;
+        }
+
+        @media only screen and (max-width: 767px) {
+            .wrapper {
+                width: auto;
+                padding: 0 20px;
+            }
+        }
+
+        /* END -- HEADER */
+
+        /* Endpoint */
+        .endpoint {
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .endpoint__content {
+            padding: 0 30px;
+            height: 0;
+        }
+
+        .endpoint__response h3,
+        .endpoint__request h3,
+        .endpoint__tests h3 {
+            text-transform: uppercase;
+            margin: 20px 0;
+            display: inline-block;
+            border-radius: 10px;
+        }
+
+        .endpoint__operationTitle {
+            margin: 20px 0;
+        }
+
+        .endpoint__title {
+            background-color: #f5f5f5;
+            padding: 10px 12px;
+            border-radius: 10px;
+            font-size: 20px;
+            display: block;
+            cursor: pointer;
+            margin: 0 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .endpoint__url {
+            line-break: anywhere;
+        }
+
+        .http_method {
+            font-weight: bold;
+        }
+
+        .endpoint__titleInfo {
+            display: flex;
+            line-height: 22px;
+        }
+
+        .endpoint__status {
+            margin-left: 10px;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 100px;
+            text-align: center;
+            color: white;
+            font-size: 14px;
+            line-height: 20px;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .endpoint__status--P {
+            background-color: green;
+        }
+
+        .endpoint__status--F {
+            background-color: red;
+        }
+
+        .endpoint__titleInfo::after {
+            content: "\276F";
+            width: 1em;
+            height: 1em;
+            margin-left: 5px;
+            text-align: right;
+            transition: all 0.35s;
+            color: #636c73;
+        }
+
+        .endpoint__checkbox {
+            position: absolute;
+            opacity: 0;
+            z-index: -1;
+        }
+
+        .endpoint__checkbox:checked+.endpoint__title .endpoint__titleInfo::after {
+            transform: rotate(90deg);
+        }
+
+        .endpoint__checkbox:checked~.endpoint__content {
+            height: auto;
+        }
+
+        .endpoint__tests {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .endpoint__testcase {
+            display: flex;
+            flex-direction: row;
+            padding: 10px 0;
+        }
+
+        .endpoint__testcaseStatus {
+            width: 10%;
+        }
+
+        .endpoint__testcaseLabel {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .endpoint__testcase-failure {
+            padding: 10px 0;
+        }
+
+        .endpoint__testcase-passed {
+            color: green;
+        }
+
+        .endpoint__testcase-failed,
+        .endpoint__testcase-error {
+            color: red;
+        }
+
+        /* END -- ENDPOINT */
+
+        /* TESTS SUMMARY */
+        .tests__summary {
+            background: #f9f9f9;
+            padding: 10px 12px;
+            margin: 0 20px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 10px;
+            border: solid;
+            border-width: 1px;
+        }
+
+        .tests__summary--passed {
+            border-color: green;
+        }
+
+        .tests__summary--failed {
+            border-color: red;
+        }
+
+        .tests__summaryTitle {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .tests__summaryResults {
+            margin-bottom: 21px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* END TESTS SUMMARY */
+
+        /* START RENDERJSON */
+        .json-body{
+            padding: 0;
+            margin: 0;
+        }
+        /* END RENDERJSON */
+
+        /* START SNIPPET CONTENT */
+        .snippet__content{
+            background-color: #eeeeee;
+            white-space: break-spaces;
+            padding: 20px 40px 20px 10px;
+            font-size: 16px;
+        }
+
+        .snippet__content a{
+            text-decoration: none;
+        }
+
+        .copy__snippet{
+            margin: 0;
+            padding: 0;
+            border: none;
+        }
+
+        .copy__snippet{
+            position: absolute;
+            top: 42px;
+            right: 10px;
+            background-color: #C6C4C4;
+            border-radius: 2px;
+            font-size: 18px;
+            width: 25px;
+            height: 23px;
+            cursor: pointer;
+            -webkit-transform: rotate(180deg);
+            -moz-transform: rotate(180deg);
+            -ms-transform: rotate(180deg);
+            -o-transform: rotate(180deg);
+            transform: rotate(180deg);
+        }
+
+        .copy__snippet:hover{
+            background-color: #D6D8D6;
+        }
+
+        .copy__snippet:focus{
+            outline: none;
+        }
+
+        .bg_green{
+            background-color: green!important;
+            color: white;
+        }
+        /* END SNIPPET CONTENT */
+    </style>
+
+    <div class="header">
+        <img class="header__image" src="https://scanapi.s3.us-east-2.amazonaws.com/assets/images/logos/scanapi-no-background.png" />
+    </div>
+
+    <div class="wrapper">
+        <header class="title">
+            
+            <h1 class="title__name">Report generated for your API</h1>
+            
+            <p class="title__overview">Generated at: 2021-01-24 02:36:58</p>
+        </header>
+
+        <!-- summary_box -->
+
+        
+        
+        
+        
+
+        <div class="endpoint">
+            <input type="checkbox" class="endpoint__checkbox" id="chck_1" />
+            <label class="endpoint__title" for="chck_1">
+                <span class="endpoint__url"><span class="http_method">GET</span> /</span>
+                <span class="endpoint__titleInfo">
+                    404
+                    <span class="endpoint__status endpoint__status--P">
+                        P
+                    </span>
+                </span>
+            </label>
+
+            <div class="endpoint__content">
+                <section class="endpoint__request">
+                    <h3>Request</h3>
+                    <p>Full URL: <a href="https://hero-company-teste.herokuapp.com/"> https://hero-company-teste.herokuapp.com/</a></p>
+
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>
+                                    Header
+                                </th>
+                                <th>
+                                    Value
+                                </th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>
+                                    User-Agent
+                                </td>
+                                <td>
+                                    python-requests/2.25.1
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Accept-Encoding
+                                </td>
+                                <td>
+                                    gzip, deflate
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Accept
+                                </td>
+                                <td>
+                                    */*
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Connection
+                                </td>
+                                <td>
+                                    keep-alive
+                                </td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                    
+
+                    
+
+                    <details>
+                        <summary>cURL</summary>
+                        <pre>curl -X GET -H 'Accept: */*' -H 'Accept-Encoding: gzip, deflate' -H 'Connection: keep-alive' -H 'User-Agent: python-requests/2.25.1' https://hero-company-teste.herokuapp.com/</pre>
+                        <button class="copy__snippet">&#10063;</button>
+                    </details>
+                </section>
+
+                <section class="endpoint__response">
+                    <h3>Response</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    status code
+                                </td>
+                                <td>
+                                    404
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    response time
+                                </td>
+                                <td>
+                                    1.863313 s
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    redirect
+                                </td>
+                                <td>
+                                    False
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    
+                    <details>
+                        <summary>Headers</summary>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Header
+                                    </th>
+                                    <th>
+                                        Value
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Connection
+                                    </td>
+                                    <td>
+                                        keep-alive
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Server
+                                    </td>
+                                    <td>
+                                        nginx
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Date
+                                    </td>
+                                    <td>
+                                        Sun, 24 Jan 2021 05:37:01 GMT
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Content-Type
+                                    </td>
+                                    <td>
+                                        text/html
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Content-Length
+                                    </td>
+                                    <td>
+                                        179
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        X-Frame-Options
+                                    </td>
+                                    <td>
+                                        DENY
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        X-Content-Type-Options
+                                    </td>
+                                    <td>
+                                        nosniff
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Referrer-Policy
+                                    </td>
+                                    <td>
+                                        same-origin
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Via
+                                    </td>
+                                    <td>
+                                        1.1 vegur
+                                    </td>
+                                </tr>
+                            </tbody>
+                            
+                        </table>
+                    </details>
+
+                    <details>
+                        <summary>Content</summary>
+                        <p class="json-body">
+                             
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Not Found</title>
+</head>
+<body>
+  <h1>Not Found</h1><p>The requested resource was not found on this server.</p>
+</body>
+</html>
+ 
+                        </p>
+                        <button class="copy__snippet">&#10063;</button>
+                    </details>
+                    
+                </section>
+
+                <section class="endpoint__tests">
+                    <h3>Tests</h3>
+                    <div class="endpoint__testcase">
+                        <div class="endpoint__testcaseStatus">
+                            <strong class="endpoint__testcase-passed">
+                                [PASSED]
+                            </strong>
+                        </div>
+                        <div class="endpoint__testcaseLabel">
+                            <span>
+                                Company Hero Test::home::status_code_is_404
+                            </span>
+                            
+                            
+                        </div>
+                    </div>
+                    
+                    <section>
+            </div>
+        </div>
+        
+        
+        
+        
+
+        <div class="endpoint">
+            <input type="checkbox" class="endpoint__checkbox" id="chck_2" />
+            <label class="endpoint__title" for="chck_2">
+                <span class="endpoint__url"><span class="http_method">GET</span> /empresas/listar-empresas/</span>
+                <span class="endpoint__titleInfo">
+                    200
+                    <span class="endpoint__status endpoint__status--P">
+                        P
+                    </span>
+                </span>
+            </label>
+
+            <div class="endpoint__content">
+                <section class="endpoint__request">
+                    <h3>Request</h3>
+                    <p>Full URL: <a href="https://hero-company-teste.herokuapp.com/empresas/listar-empresas/"> https://hero-company-teste.herokuapp.com/empresas/listar-empresas/</a></p>
+
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>
+                                    Header
+                                </th>
+                                <th>
+                                    Value
+                                </th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>
+                                    User-Agent
+                                </td>
+                                <td>
+                                    python-requests/2.25.1
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Accept-Encoding
+                                </td>
+                                <td>
+                                    gzip, deflate
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Accept
+                                </td>
+                                <td>
+                                    */*
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Connection
+                                </td>
+                                <td>
+                                    keep-alive
+                                </td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                    
+
+                    
+
+                    <details>
+                        <summary>cURL</summary>
+                        <pre>curl -X GET -H 'Accept: */*' -H 'Accept-Encoding: gzip, deflate' -H 'Connection: keep-alive' -H 'User-Agent: python-requests/2.25.1' https://hero-company-teste.herokuapp.com/empresas/listar-empresas/</pre>
+                        <button class="copy__snippet">&#10063;</button>
+                    </details>
+                </section>
+
+                <section class="endpoint__response">
+                    <h3>Response</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    status code
+                                </td>
+                                <td>
+                                    200
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    response time
+                                </td>
+                                <td>
+                                    1.366348 s
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    redirect
+                                </td>
+                                <td>
+                                    False
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    
+                    <details>
+                        <summary>Headers</summary>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Header
+                                    </th>
+                                    <th>
+                                        Value
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Connection
+                                    </td>
+                                    <td>
+                                        keep-alive
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Server
+                                    </td>
+                                    <td>
+                                        nginx
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Date
+                                    </td>
+                                    <td>
+                                        Sun, 24 Jan 2021 05:37:02 GMT
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Content-Type
+                                    </td>
+                                    <td>
+                                        application/json
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Content-Length
+                                    </td>
+                                    <td>
+                                        6183
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Vary
+                                    </td>
+                                    <td>
+                                        Accept, Cookie
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Allow
+                                    </td>
+                                    <td>
+                                        GET, HEAD, OPTIONS
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        X-Frame-Options
+                                    </td>
+                                    <td>
+                                        DENY
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        X-Content-Type-Options
+                                    </td>
+                                    <td>
+                                        nosniff
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Referrer-Policy
+                                    </td>
+                                    <td>
+                                        same-origin
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Via
+                                    </td>
+                                    <td>
+                                        1.1 vegur
+                                    </td>
+                                </tr>
+                            </tbody>
+                            
+                        </table>
+                    </details>
+
+                    <details>
+                        <summary>Content</summary>
+                        <p class="json-body">
+                             [{"id":"24e51690-188b-440c-bafe-9897fe5539b4","cnpj":"20240272000176","razao_social":"Company Hero LTDA","data_criacao":"23/01/2021 18:45:38","funcionarios":[{"id":"206633f6-62f8-4ddb-b081-9e95d58ca0bc","nome_sobrenome":"Andre Emidio"},{"id":"ca4b9bfb-97bc-4055-876f-b019f0357f7c","nome_sobrenome":"Andre Emidio"}]},{"id":"f235a521-df93-4090-ac32-8441f12346fc","cnpj":"05206246000138","razao_social":"Conta AzuL Software LTDA","data_criacao":"23/01/2021 20:44:41","funcionarios":[{"id":"206633f6-62f8-4ddb-b081-9e95d58ca0bc","nome_sobrenome":"Andre Emidio"},{"id":"ca4b9bfb-97bc-4055-876f-b019f0357f7c","nome_sobrenome":"Andre Emidio"}]},{"id":"fe90a852-c424-48d4-9339-b4fa7e66910a","cnpj":"34660841000147","razao_social":"Aemidio Solucoes em Tecnologia Eireli","data_criacao":"24/01/2021 03:14:49","funcionarios":[]},{"id":"f615ae0c-8f25-4f8f-ab06-0f8e9339558b","cnpj":"34660841000147","razao_social":"Aemidio Solucoes em Tecnologia Eireli","data_criacao":"24/01/2021 03:15:43","funcionarios":[]},{"id":"8130d32c-671a-4984-9a5b-7d2a4615417a","cnpj":"74503361000197","razao_social":"Uma Empresa de Fachada Fake LTDA","data_criacao":"24/01/2021 03:42:33","funcionarios":[]},{"id":"c9de1313-850e-4201-bb00-0ef6eff9994c","cnpj":"34660841000148","razao_social":"Há Duas Empresas De Chegada LTDA","data_criacao":"24/01/2021 03:45:12","funcionarios":[{"id":"ca4b9bfb-97bc-4055-876f-b019f0357f7c","nome_sobrenome":"Andre Emidio"},{"id":"206633f6-62f8-4ddb-b081-9e95d58ca0bc","nome_sobrenome":"Andre Emidio"},{"id":"75c45c87-698e-4a25-bd08-f60b7c446157","nome_sobrenome":null}]},{"id":"1ed7857b-aa3b-433b-ab58-6e747d252073","cnpj":"74503361000197","razao_social":"Uma Empresa de Fachada Fake LTDA","data_criacao":"24/01/2021 03:47:24","funcionarios":[{"id":"ca4b9bfb-97bc-4055-876f-b019f0357f7c","nome_sobrenome":"Andre Emidio"}]},{"id":"fdd3870f-8178-45d3-95fd-8b873f8cffa9","cnpj":"34660841000148","razao_social":"Há Duas Empresas De Chegada LTDA","data_criacao":"24/01/2021 03:48:00","funcionarios":[{"id":"ca4b9bfb-97bc-4055-876f-b019f0357f7c","nome_sobrenome":"Andre Emidio"},{"id":"206633f6-62f8-4ddb-b081-9e95d58ca0bc","nome_sobrenome":"Andre Emidio"},{"id":"75c45c87-698e-4a25-bd08-f60b7c446157","nome_sobrenome":null}]},{"id":"86f13a5e-2ff8-407f-82b0-ae69600c79ee","cnpj":"74503361000197","razao_social":"Uma Empresa de Fachada Fake LTDA","data_criacao":"24/01/2021 03:51:37","funcionarios":[{"id":"ca4b9bfb-97bc-4055-876f-b019f0357f7c","nome_sobrenome":"Andre Emidio"},{"id":"206633f6-62f8-4ddb-b081-9e95d58ca0bc","nome_sobrenome":"Andre Emidio"}]},{"id":"a66feb2a-b444-4528-a283-5f4cff8541a0","cnpj":"74503361000197","razao_social":"Uma Empresa de Fachada Fake LTDA","data_criacao":"24/01/2021 04:18:28","funcionarios":[{"id":"ca4b9bfb-97bc-4055-876f-b019f0357f7c","nome_sobrenome":"Andre Emidio"},{"id":"206633f6-62f8-4ddb-b081-9e95d58ca0bc","nome_sobrenome":"Andre Emidio"}]},{"id":"c795413e-72db-4491-b6e4-201c86087e14","cnpj":"74503361000197","razao_social":"Uma Empresa de Fachada Fake LTDA","data_criacao":"24/01/2021 04:19:19","funcionarios":[{"id":"ca4b9bfb-97bc-4055-876f-b019f0357f7c","nome_sobrenome":"Andre Emidio"},{"id":"206633f6-62f8-4ddb-b081-9e95d58ca0bc","nome_sobrenome":"Andre Emidio"}]},{"id":"14349abd-3db1-4c19-91b2-addf31549f37","cnpj":"74503361000197","razao_social":"Uma Empresa de Fachada Fake LTDA","data_criacao":"24/01/2021 04:21:57","funcionarios":[{"id":"ca4b9bfb-97bc-4055-876f-b019f0357f7c","nome_sobrenome":"Andre Emidio"},{"id":"206633f6-62f8-4ddb-b081-9e95d58ca0bc","nome_sobrenome":"Andre Emidio"}]},{"id":"9348c770-cf85-460e-8204-66f4a8446a11","cnpj":"74503361000197","razao_social":"Uma Empresa de Fachada Fake LTDA","data_criacao":"24/01/2021 04:22:30","funcionarios":[{"id":"ca4b9bfb-97bc-4055-876f-b019f0357f7c","nome_sobrenome":"Andre Emidio"},{"id":"206633f6-62f8-4ddb-b081-9e95d58ca0bc","nome_sobrenome":"Andre Emidio"}]},{"id":"ddb8001b-6c3e-4312-8132-a065fe537aa4","cnpj":"74503361000197","razao_social":"Uma Empresa de Fachada Fake LTDA","data_criacao":"24/01/2021 04:23:04","funcionarios":[{"id":"ca4b9bfb-97bc-4055-876f-b019f0357f7c","nome_sobrenome":"Andre Emidio"},{"id":"206633f6-62f8-4ddb-b081-9e95d58ca0bc","nome_sobrenome":"Andre Emidio"}]},{"id":"acef66dc-b1ab-4791-adf7-088494d22e50","cnpj":"74503361000197","razao_social":"Uma Empresa de Fachada Fake LTDA","data_criacao":"24/01/2021 04:30:31","funcionarios":[{"id":"ca4b9bfb-97bc-4055-876f-b019f0357f7c","nome_sobrenome":"Andre Emidio"},{"id":"206633f6-62f8-4ddb-b081-9e95d58ca0bc","nome_sobrenome":"Andre Emidio"}]},{"id":"1ad7598d-aee3-4f37-a534-bc66738f3c80","cnpj":"74503361000197","razao_social":"Uma Empresa de Fachada Fake LTDA","data_criacao":"24/01/2021 04:34:40","funcionarios":[{"id":"ca4b9bfb-97bc-4055-876f-b019f0357f7c","nome_sobrenome":"Andre Emidio"},{"id":"206633f6-62f8-4ddb-b081-9e95d58ca0bc","nome_sobrenome":"Andre Emidio"}]},{"id":"87ff6ed5-4dc6-42bb-9b7f-557e2ee78a08","cnpj":"74503361000197","razao_social":"Uma Empresa de Fachada Fake LTDA","data_criacao":"24/01/2021 04:35:08","funcionarios":[{"id":"ca4b9bfb-97bc-4055-876f-b019f0357f7c","nome_sobrenome":"Andre Emidio"},{"id":"206633f6-62f8-4ddb-b081-9e95d58ca0bc","nome_sobrenome":"Andre Emidio"}]},{"id":"fd12389e-44a0-482b-bd6e-0ee5bce948df","cnpj":"74503361000197","razao_social":"Uma Empresa de Fachada Fake LTDA","data_criacao":"24/01/2021 04:36:01","funcionarios":[{"id":"ca4b9bfb-97bc-4055-876f-b019f0357f7c","nome_sobrenome":"Andre Emidio"},{"id":"206633f6-62f8-4ddb-b081-9e95d58ca0bc","nome_sobrenome":"Andre Emidio"}]},{"id":"72ecbab7-62fa-4dfd-9b5f-168c456f8c53","cnpj":"74503361000187","razao_social":"Uma Empresa de Fachada Fake LTDA","data_criacao":"24/01/2021 04:54:40","funcionarios":[{"id":"ca4b9bfb-97bc-4055-876f-b019f0357f7c","nome_sobrenome":"Andre Emidio"},{"id":"206633f6-62f8-4ddb-b081-9e95d58ca0bc","nome_sobrenome":"Andre Emidio"}]},{"id":"5e7669a6-0095-444a-9dc1-979ebdc74e98","cnpj":"74503361000167","razao_social":"Uma Empresa de Fachada Fake LTDA","data_criacao":"24/01/2021 05:07:35","funcionarios":[{"id":"ca4b9bfb-97bc-4055-876f-b019f0357f7c","nome_sobrenome":"Andre Emidio"},{"id":"206633f6-62f8-4ddb-b081-9e95d58ca0bc","nome_sobrenome":"Andre Emidio"}]}] 
+                        </p>
+                        <button class="copy__snippet">&#10063;</button>
+                    </details>
+                    
+                </section>
+
+                <section class="endpoint__tests">
+                    <h3>Tests</h3>
+                    <div class="endpoint__testcase">
+                        <div class="endpoint__testcaseStatus">
+                            <strong class="endpoint__testcase-passed">
+                                [PASSED]
+                            </strong>
+                        </div>
+                        <div class="endpoint__testcaseLabel">
+                            <span>
+                                Company Hero Test::Empresas::Listar Empresas::status_code_is_200
+                            </span>
+                            
+                            
+                        </div>
+                    </div>
+                    
+                    <section>
+            </div>
+        </div>
+        
+        
+        
+        
+
+        <div class="endpoint">
+            <input type="checkbox" class="endpoint__checkbox" id="chck_3" />
+            <label class="endpoint__title" for="chck_3">
+                <span class="endpoint__url"><span class="http_method">POST</span> /empresas/criar-empresas/</span>
+                <span class="endpoint__titleInfo">
+                    400
+                    <span class="endpoint__status endpoint__status--F">
+                        F
+                    </span>
+                </span>
+            </label>
+
+            <div class="endpoint__content">
+                <section class="endpoint__request">
+                    <h3>Request</h3>
+                    <p>Full URL: <a href="https://hero-company-teste.herokuapp.com/empresas/criar-empresas/"> https://hero-company-teste.herokuapp.com/empresas/criar-empresas/</a></p>
+
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>
+                                    Header
+                                </th>
+                                <th>
+                                    Value
+                                </th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>
+                                    User-Agent
+                                </td>
+                                <td>
+                                    python-requests/2.25.1
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Accept-Encoding
+                                </td>
+                                <td>
+                                    gzip, deflate
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Accept
+                                </td>
+                                <td>
+                                    */*
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Connection
+                                </td>
+                                <td>
+                                    keep-alive
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Content-Length
+                                </td>
+                                <td>
+                                    174
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Content-Type
+                                </td>
+                                <td>
+                                    application/json
+                                </td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                    
+
+                    
+                    <details>
+                        <summary>Body</summary>
+                        <p>b'{"cnpj": 74503361000167, "razao_social": "Uma Empresa de Fachada Fake LTDA", "funcionarios": ["ca4b9bfb-97bc-4055-876f-b019f0357f7c", "206633f6-62f8-4ddb-b081-9e95d58ca0bc"]}'</p>
+                    </details>
+                    
+
+                    <details>
+                        <summary>cURL</summary>
+                        <pre>curl -X POST -H 'Accept: */*' -H 'Accept-Encoding: gzip, deflate' -H 'Connection: keep-alive' -H 'Content-Length: 174' -H 'Content-Type: application/json' -H 'User-Agent: python-requests/2.25.1' -d '{"cnpj": 74503361000167, "razao_social": "Uma Empresa de Fachada Fake LTDA", "funcionarios": ["ca4b9bfb-97bc-4055-876f-b019f0357f7c", "206633f6-62f8-4ddb-b081-9e95d58ca0bc"]}' https://hero-company-teste.herokuapp.com/empresas/criar-empresas/</pre>
+                        <button class="copy__snippet">&#10063;</button>
+                    </details>
+                </section>
+
+                <section class="endpoint__response">
+                    <h3>Response</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    status code
+                                </td>
+                                <td>
+                                    400
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    response time
+                                </td>
+                                <td>
+                                    0.790851 s
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    redirect
+                                </td>
+                                <td>
+                                    False
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    
+                    <details>
+                        <summary>Headers</summary>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Header
+                                    </th>
+                                    <th>
+                                        Value
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Connection
+                                    </td>
+                                    <td>
+                                        keep-alive
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Server
+                                    </td>
+                                    <td>
+                                        nginx
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Date
+                                    </td>
+                                    <td>
+                                        Sun, 24 Jan 2021 05:37:03 GMT
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Content-Type
+                                    </td>
+                                    <td>
+                                        application/json
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Content-Length
+                                    </td>
+                                    <td>
+                                        51
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Vary
+                                    </td>
+                                    <td>
+                                        Accept, Cookie
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Allow
+                                    </td>
+                                    <td>
+                                        POST, OPTIONS
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        X-Frame-Options
+                                    </td>
+                                    <td>
+                                        DENY
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        X-Content-Type-Options
+                                    </td>
+                                    <td>
+                                        nosniff
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Referrer-Policy
+                                    </td>
+                                    <td>
+                                        same-origin
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Via
+                                    </td>
+                                    <td>
+                                        1.1 vegur
+                                    </td>
+                                </tr>
+                            </tbody>
+                            
+                        </table>
+                    </details>
+
+                    <details>
+                        <summary>Content</summary>
+                        <p class="json-body">
+                             {"cnpj":["Empresa with this cnpj already exists."]} 
+                        </p>
+                        <button class="copy__snippet">&#10063;</button>
+                    </details>
+                    
+                </section>
+
+                <section class="endpoint__tests">
+                    <h3>Tests</h3>
+                    <div class="endpoint__testcase">
+                        <div class="endpoint__testcaseStatus">
+                            <strong class="endpoint__testcase-failed">
+                                [FAILED]
+                            </strong>
+                        </div>
+                        <div class="endpoint__testcaseLabel">
+                            <span>
+                                Company Hero Test::Empresas::Criar Empresas::status_code_is_201
+                            </span>
+                            
+                            <span class="endpoint__testcase-failure">response.status_code == 201 is false</span>
+                            
+                            
+                        </div>
+                    </div>
+                    
+                    <section>
+            </div>
+        </div>
+        
+        
+        
+        
+
+        <div class="endpoint">
+            <input type="checkbox" class="endpoint__checkbox" id="chck_4" />
+            <label class="endpoint__title" for="chck_4">
+                <span class="endpoint__url"><span class="http_method">GET</span> /funcionarios/listar-funcionarios/</span>
+                <span class="endpoint__titleInfo">
+                    200
+                    <span class="endpoint__status endpoint__status--P">
+                        P
+                    </span>
+                </span>
+            </label>
+
+            <div class="endpoint__content">
+                <section class="endpoint__request">
+                    <h3>Request</h3>
+                    <p>Full URL: <a href="https://hero-company-teste.herokuapp.com/funcionarios/listar-funcionarios/"> https://hero-company-teste.herokuapp.com/funcionarios/listar-funcionarios/</a></p>
+
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>
+                                    Header
+                                </th>
+                                <th>
+                                    Value
+                                </th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>
+                                    User-Agent
+                                </td>
+                                <td>
+                                    python-requests/2.25.1
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Accept-Encoding
+                                </td>
+                                <td>
+                                    gzip, deflate
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Accept
+                                </td>
+                                <td>
+                                    */*
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Connection
+                                </td>
+                                <td>
+                                    keep-alive
+                                </td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                    
+
+                    
+
+                    <details>
+                        <summary>cURL</summary>
+                        <pre>curl -X GET -H 'Accept: */*' -H 'Accept-Encoding: gzip, deflate' -H 'Connection: keep-alive' -H 'User-Agent: python-requests/2.25.1' https://hero-company-teste.herokuapp.com/funcionarios/listar-funcionarios/</pre>
+                        <button class="copy__snippet">&#10063;</button>
+                    </details>
+                </section>
+
+                <section class="endpoint__response">
+                    <h3>Response</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    status code
+                                </td>
+                                <td>
+                                    200
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    response time
+                                </td>
+                                <td>
+                                    1.288561 s
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    redirect
+                                </td>
+                                <td>
+                                    False
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    
+                    <details>
+                        <summary>Headers</summary>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Header
+                                    </th>
+                                    <th>
+                                        Value
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Connection
+                                    </td>
+                                    <td>
+                                        keep-alive
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Server
+                                    </td>
+                                    <td>
+                                        nginx
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Date
+                                    </td>
+                                    <td>
+                                        Sun, 24 Jan 2021 05:37:04 GMT
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Content-Type
+                                    </td>
+                                    <td>
+                                        application/json
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Content-Length
+                                    </td>
+                                    <td>
+                                        316
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Vary
+                                    </td>
+                                    <td>
+                                        Accept, Cookie
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Allow
+                                    </td>
+                                    <td>
+                                        GET, HEAD, OPTIONS
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        X-Frame-Options
+                                    </td>
+                                    <td>
+                                        DENY
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        X-Content-Type-Options
+                                    </td>
+                                    <td>
+                                        nosniff
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Referrer-Policy
+                                    </td>
+                                    <td>
+                                        same-origin
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Via
+                                    </td>
+                                    <td>
+                                        1.1 vegur
+                                    </td>
+                                </tr>
+                            </tbody>
+                            
+                        </table>
+                    </details>
+
+                    <details>
+                        <summary>Content</summary>
+                        <p class="json-body">
+                             [{"id":"ca4b9bfb-97bc-4055-876f-b019f0357f7c","nome_sobrenome":"Andre Emidio"},{"id":"206633f6-62f8-4ddb-b081-9e95d58ca0bc","nome_sobrenome":"Andre Emidio"},{"id":"75c45c87-698e-4a25-bd08-f60b7c446157","nome_sobrenome":null},{"id":"c9573aaa-e8f9-4696-8718-bc0daa9379a1","nome_sobrenome":"Stringus Stringado String"}] 
+                        </p>
+                        <button class="copy__snippet">&#10063;</button>
+                    </details>
+                    
+                </section>
+
+                <section class="endpoint__tests">
+                    <h3>Tests</h3>
+                    <div class="endpoint__testcase">
+                        <div class="endpoint__testcaseStatus">
+                            <strong class="endpoint__testcase-passed">
+                                [PASSED]
+                            </strong>
+                        </div>
+                        <div class="endpoint__testcaseLabel">
+                            <span>
+                                Company Hero Test::Funcionarios::Listar Funcionarios::status_code_is_200
+                            </span>
+                            
+                            
+                        </div>
+                    </div>
+                    
+                    <section>
+            </div>
+        </div>
+        
+        
+        
+        
+
+        <div class="endpoint">
+            <input type="checkbox" class="endpoint__checkbox" id="chck_5" />
+            <label class="endpoint__title" for="chck_5">
+                <span class="endpoint__url"><span class="http_method">GET</span> /funcionarios/detalhes-funcionario/ca4b9bfb-97bc-4055-876f-b019f0357f7c/</span>
+                <span class="endpoint__titleInfo">
+                    200
+                    <span class="endpoint__status endpoint__status--P">
+                        P
+                    </span>
+                </span>
+            </label>
+
+            <div class="endpoint__content">
+                <section class="endpoint__request">
+                    <h3>Request</h3>
+                    <p>Full URL: <a href="https://hero-company-teste.herokuapp.com/funcionarios/detalhes-funcionario/ca4b9bfb-97bc-4055-876f-b019f0357f7c/"> https://hero-company-teste.herokuapp.com/funcionarios/detalhes-funcionario/ca4b9bfb-97bc-4055-876f-b019f0357f7c/</a></p>
+
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>
+                                    Header
+                                </th>
+                                <th>
+                                    Value
+                                </th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>
+                                    User-Agent
+                                </td>
+                                <td>
+                                    python-requests/2.25.1
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Accept-Encoding
+                                </td>
+                                <td>
+                                    gzip, deflate
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Accept
+                                </td>
+                                <td>
+                                    */*
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Connection
+                                </td>
+                                <td>
+                                    keep-alive
+                                </td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                    
+
+                    
+
+                    <details>
+                        <summary>cURL</summary>
+                        <pre>curl -X GET -H 'Accept: */*' -H 'Accept-Encoding: gzip, deflate' -H 'Connection: keep-alive' -H 'User-Agent: python-requests/2.25.1' https://hero-company-teste.herokuapp.com/funcionarios/detalhes-funcionario/ca4b9bfb-97bc-4055-876f-b019f0357f7c/</pre>
+                        <button class="copy__snippet">&#10063;</button>
+                    </details>
+                </section>
+
+                <section class="endpoint__response">
+                    <h3>Response</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    status code
+                                </td>
+                                <td>
+                                    200
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    response time
+                                </td>
+                                <td>
+                                    0.812436 s
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    redirect
+                                </td>
+                                <td>
+                                    False
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    
+                    <details>
+                        <summary>Headers</summary>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Header
+                                    </th>
+                                    <th>
+                                        Value
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Connection
+                                    </td>
+                                    <td>
+                                        keep-alive
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Server
+                                    </td>
+                                    <td>
+                                        nginx
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Date
+                                    </td>
+                                    <td>
+                                        Sun, 24 Jan 2021 05:37:05 GMT
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Content-Type
+                                    </td>
+                                    <td>
+                                        application/json
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Content-Length
+                                    </td>
+                                    <td>
+                                        2812
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Vary
+                                    </td>
+                                    <td>
+                                        Accept, Cookie
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Allow
+                                    </td>
+                                    <td>
+                                        GET, HEAD, OPTIONS
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        X-Frame-Options
+                                    </td>
+                                    <td>
+                                        DENY
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        X-Content-Type-Options
+                                    </td>
+                                    <td>
+                                        nosniff
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Referrer-Policy
+                                    </td>
+                                    <td>
+                                        same-origin
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Via
+                                    </td>
+                                    <td>
+                                        1.1 vegur
+                                    </td>
+                                </tr>
+                            </tbody>
+                            
+                        </table>
+                    </details>
+
+                    <details>
+                        <summary>Content</summary>
+                        <p class="json-body">
+                             {"id":"ca4b9bfb-97bc-4055-876f-b019f0357f7c","nome_sobrenome":"Andre Emidio","email":"andresjc2008@gmail.com","data_criacao":"23/01/2021 18:52:21","empresas_set":[{"id":"24e51690-188b-440c-bafe-9897fe5539b4","cnpj":"20240272000176","razao_social":"Company Hero LTDA","data_criacao":"23/01/2021 18:45:38"},{"id":"f235a521-df93-4090-ac32-8441f12346fc","cnpj":"05206246000138","razao_social":"Conta AzuL Software LTDA","data_criacao":"23/01/2021 20:44:41"},{"id":"c9de1313-850e-4201-bb00-0ef6eff9994c","cnpj":"34660841000148","razao_social":"Há Duas Empresas De Chegada LTDA","data_criacao":"24/01/2021 03:45:12"},{"id":"1ed7857b-aa3b-433b-ab58-6e747d252073","cnpj":"74503361000197","razao_social":"Uma Empresa de Fachada Fake LTDA","data_criacao":"24/01/2021 03:47:24"},{"id":"fdd3870f-8178-45d3-95fd-8b873f8cffa9","cnpj":"34660841000148","razao_social":"Há Duas Empresas De Chegada LTDA","data_criacao":"24/01/2021 03:48:00"},{"id":"86f13a5e-2ff8-407f-82b0-ae69600c79ee","cnpj":"74503361000197","razao_social":"Uma Empresa de Fachada Fake LTDA","data_criacao":"24/01/2021 03:51:37"},{"id":"a66feb2a-b444-4528-a283-5f4cff8541a0","cnpj":"74503361000197","razao_social":"Uma Empresa de Fachada Fake LTDA","data_criacao":"24/01/2021 04:18:28"},{"id":"c795413e-72db-4491-b6e4-201c86087e14","cnpj":"74503361000197","razao_social":"Uma Empresa de Fachada Fake LTDA","data_criacao":"24/01/2021 04:19:19"},{"id":"14349abd-3db1-4c19-91b2-addf31549f37","cnpj":"74503361000197","razao_social":"Uma Empresa de Fachada Fake LTDA","data_criacao":"24/01/2021 04:21:57"},{"id":"9348c770-cf85-460e-8204-66f4a8446a11","cnpj":"74503361000197","razao_social":"Uma Empresa de Fachada Fake LTDA","data_criacao":"24/01/2021 04:22:30"},{"id":"ddb8001b-6c3e-4312-8132-a065fe537aa4","cnpj":"74503361000197","razao_social":"Uma Empresa de Fachada Fake LTDA","data_criacao":"24/01/2021 04:23:04"},{"id":"acef66dc-b1ab-4791-adf7-088494d22e50","cnpj":"74503361000197","razao_social":"Uma Empresa de Fachada Fake LTDA","data_criacao":"24/01/2021 04:30:31"},{"id":"1ad7598d-aee3-4f37-a534-bc66738f3c80","cnpj":"74503361000197","razao_social":"Uma Empresa de Fachada Fake LTDA","data_criacao":"24/01/2021 04:34:40"},{"id":"87ff6ed5-4dc6-42bb-9b7f-557e2ee78a08","cnpj":"74503361000197","razao_social":"Uma Empresa de Fachada Fake LTDA","data_criacao":"24/01/2021 04:35:08"},{"id":"fd12389e-44a0-482b-bd6e-0ee5bce948df","cnpj":"74503361000197","razao_social":"Uma Empresa de Fachada Fake LTDA","data_criacao":"24/01/2021 04:36:01"},{"id":"72ecbab7-62fa-4dfd-9b5f-168c456f8c53","cnpj":"74503361000187","razao_social":"Uma Empresa de Fachada Fake LTDA","data_criacao":"24/01/2021 04:54:40"},{"id":"5e7669a6-0095-444a-9dc1-979ebdc74e98","cnpj":"74503361000167","razao_social":"Uma Empresa de Fachada Fake LTDA","data_criacao":"24/01/2021 05:07:35"}]} 
+                        </p>
+                        <button class="copy__snippet">&#10063;</button>
+                    </details>
+                    
+                </section>
+
+                <section class="endpoint__tests">
+                    <h3>Tests</h3>
+                    <div class="endpoint__testcase">
+                        <div class="endpoint__testcaseStatus">
+                            <strong class="endpoint__testcase-passed">
+                                [PASSED]
+                            </strong>
+                        </div>
+                        <div class="endpoint__testcaseLabel">
+                            <span>
+                                Company Hero Test::Funcionarios::Detalhar Funcionario::status_code_is_200
+                            </span>
+                            
+                            
+                        </div>
+                    </div>
+                    
+                    <section>
+            </div>
+        </div>
+        
+        
+        
+        
+
+        <div class="endpoint">
+            <input type="checkbox" class="endpoint__checkbox" id="chck_6" />
+            <label class="endpoint__title" for="chck_6">
+                <span class="endpoint__url"><span class="http_method">POST</span> /funcionarios/criar-funcionarios/</span>
+                <span class="endpoint__titleInfo">
+                    400
+                    <span class="endpoint__status endpoint__status--F">
+                        F
+                    </span>
+                </span>
+            </label>
+
+            <div class="endpoint__content">
+                <section class="endpoint__request">
+                    <h3>Request</h3>
+                    <p>Full URL: <a href="https://hero-company-teste.herokuapp.com/funcionarios/criar-funcionarios/"> https://hero-company-teste.herokuapp.com/funcionarios/criar-funcionarios/</a></p>
+
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>
+                                    Header
+                                </th>
+                                <th>
+                                    Value
+                                </th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>
+                                    User-Agent
+                                </td>
+                                <td>
+                                    python-requests/2.25.1
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Accept-Encoding
+                                </td>
+                                <td>
+                                    gzip, deflate
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Accept
+                                </td>
+                                <td>
+                                    */*
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Connection
+                                </td>
+                                <td>
+                                    keep-alive
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Content-Length
+                                </td>
+                                <td>
+                                    78
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Content-Type
+                                </td>
+                                <td>
+                                    application/json
+                                </td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                    
+
+                    
+                    <details>
+                        <summary>Body</summary>
+                        <p>b'{"nome_sobrenome": "Stringus Stringado String", "email": "string@example.com"}'</p>
+                    </details>
+                    
+
+                    <details>
+                        <summary>cURL</summary>
+                        <pre>curl -X POST -H 'Accept: */*' -H 'Accept-Encoding: gzip, deflate' -H 'Connection: keep-alive' -H 'Content-Length: 78' -H 'Content-Type: application/json' -H 'User-Agent: python-requests/2.25.1' -d '{"nome_sobrenome": "Stringus Stringado String", "email": "string@example.com"}' https://hero-company-teste.herokuapp.com/funcionarios/criar-funcionarios/</pre>
+                        <button class="copy__snippet">&#10063;</button>
+                    </details>
+                </section>
+
+                <section class="endpoint__response">
+                    <h3>Response</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    status code
+                                </td>
+                                <td>
+                                    400
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    response time
+                                </td>
+                                <td>
+                                    0.780883 s
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    redirect
+                                </td>
+                                <td>
+                                    False
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    
+                    <details>
+                        <summary>Headers</summary>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Header
+                                    </th>
+                                    <th>
+                                        Value
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Connection
+                                    </td>
+                                    <td>
+                                        keep-alive
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Server
+                                    </td>
+                                    <td>
+                                        nginx
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Date
+                                    </td>
+                                    <td>
+                                        Sun, 24 Jan 2021 05:37:06 GMT
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Content-Type
+                                    </td>
+                                    <td>
+                                        application/json
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Content-Length
+                                    </td>
+                                    <td>
+                                        57
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Vary
+                                    </td>
+                                    <td>
+                                        Accept, Cookie
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Allow
+                                    </td>
+                                    <td>
+                                        POST, OPTIONS
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        X-Frame-Options
+                                    </td>
+                                    <td>
+                                        DENY
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        X-Content-Type-Options
+                                    </td>
+                                    <td>
+                                        nosniff
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Referrer-Policy
+                                    </td>
+                                    <td>
+                                        same-origin
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Via
+                                    </td>
+                                    <td>
+                                        1.1 vegur
+                                    </td>
+                                </tr>
+                            </tbody>
+                            
+                        </table>
+                    </details>
+
+                    <details>
+                        <summary>Content</summary>
+                        <p class="json-body">
+                             {"email":["Funcionario with this email already exists."]} 
+                        </p>
+                        <button class="copy__snippet">&#10063;</button>
+                    </details>
+                    
+                </section>
+
+                <section class="endpoint__tests">
+                    <h3>Tests</h3>
+                    <div class="endpoint__testcase">
+                        <div class="endpoint__testcaseStatus">
+                            <strong class="endpoint__testcase-failed">
+                                [FAILED]
+                            </strong>
+                        </div>
+                        <div class="endpoint__testcaseLabel">
+                            <span>
+                                Company Hero Test::Funcionarios::Criar Funcionario::status_code_is_201
+                            </span>
+                            
+                            <span class="endpoint__testcase-failure">response.status_code == 201 is false</span>
+                            
+                            
+                        </div>
+                    </div>
+                    
+                    <section>
+            </div>
+        </div>
+        
+
+        
+
+        <div class="tests__summary tests__summary--failed">
+            <h3 class="tests__summaryTitle">Tests Summary</h3>
+            <div class="tests__summaryResults">
+                <span><strong>PASSED:</strong> 4</span>
+                <span><strong>FAILURES:</strong> 2</span>
+                <span><strong>ERRORS:</strong> 0</span>
+                <span><strong>Total Time:</strong> 0:00:07.349062</span>
+            </div>
+        </div>
+
+        <a class="github" href="https://github.com/scanapi/scanapi"><img class="github__svg" src="https://scanapi.s3.us-east-2.amazonaws.com/assets/images/github/github-logo.svg" /></a>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/renderjson"></script>
+        <script>
+            renderjson.set_show_to_level(1);
+            renderjson.set_max_string_length(65);
+
+            const all_json_bodies = document.getElementsByClassName("json-body");
+
+            function tryParseJSON(string) {
+                try {
+                    var o = JSON.parse(string);
+                    if (o && typeof o === "object") {
+                        return o;
+                    }
+                }
+                catch (e) { console.log("Invalid JSON Body: " + e) }
+
+                return false;
+            };
+
+            for (var i = 0; i < all_json_bodies.length; i++) {
+                raw_json = all_json_bodies[i].innerText;
+                parsed_json = tryParseJSON(raw_json)
+
+                if (parsed_json) {
+                    all_json_bodies[i].innerText = '';
+                    all_json_bodies[i].appendChild(renderjson(parsed_json));
+                    all_json_bodies[i].firstElementChild.setAttribute('data-content', raw_json);
+                }
+            }
+            /*
+            * Adding class name of snippet__content to all pre elements
+            */
+            var pre_elements = document.querySelectorAll('pre');
+
+            for (var i = 0; i < pre_elements.length; i++){
+                pre_elements[i].classList.add('snippet__content');
+            }
+            /*
+            * Copying data to clipboard
+            */
+            var copy_snippet_button = document.querySelectorAll('.copy__snippet');
+
+            var copyToClipBoard = function(value, button) {
+                if ( value ){
+                    navigator.clipboard.writeText(value)
+                        .then(function(){
+                            console.log('Copied!');
+                            console.log(value)
+                            button.classList.add('bg_green')
+
+                            setTimeout(function(){
+                                button.classList.remove('bg_green')
+                            }, 180);
+                        })
+                        .catch(function(err){
+                            console.log('Something went wrong', err);
+                        })
+                }
+            }
+
+            copy_snippet_button.forEach(function(elem){
+                elem.addEventListener('click', function(evt){
+                    var sibling_element = this.previousElementSibling;
+                    var _this_button = this;
+                    if ( sibling_element.className == 'snippet__content' ){
+                        var content = sibling_element.textContent.trim();
+                        copyToClipBoard(content, _this_button)
+                    } else {
+                        var child_element = sibling_element.children[0];
+                        var content = child_element.getAttribute('data-content').trim()
+                        copyToClipBoard(content, _this_button)
+                    }
+                })
+            })
+        </script>
+</body>
+
+</html>
