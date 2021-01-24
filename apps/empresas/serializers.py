@@ -7,7 +7,7 @@ from apps.funcionarios.serializers import ListFuncionariosSerializer
 class PostEmpresaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Empresas
-        fields = ('id', 'cnpj', 'razao_social')
+        fields = ('id', 'cnpj', 'razao_social', 'funcionarios')
 
 
 class GetEmpresasSerializer(serializers.ModelSerializer):
