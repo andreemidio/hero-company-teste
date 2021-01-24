@@ -44,7 +44,7 @@ em [Swagger](https://hero-company-teste.herokuapp.com/swagger)
 e [Redoc](https://hero-company-teste.herokuapp.com/redoc/)
 
 Para fazer testes simples como o [Postman](https://documenter.getpostman.com/view/10291528/TW6tLVHU)
-Ao abrir a página , no canto superior direito, há um botão para abrir a ferramenta *Postman* automaticamente e já configurada com o ambiente pronto.
+ao abrir a página , no canto superior direito, há um botão para abrir a ferramenta *Postman* automaticamente e já configurada com o ambiente pronto.
 
 Caso queira acessar o [banco de dados](https://hero-company-teste.herokuapp.com/lotus/)  use:
 
