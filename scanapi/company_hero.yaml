@@ -1,6 +1,6 @@
 endpoints:
   - name: Company Hero Test
-    path:  https://hero-company-teste.herokuapp.com/
+    path: https://hero-company-teste.herokuapp.com/
     requests:
       - name: home
         method: get
@@ -28,7 +28,7 @@ endpoints:
                 assert: ${{ response.status_code == 201 }}
 
             body:
-              cnpj: 74503361000187
+              cnpj: 74503361000167
               razao_social: Uma Empresa de Fachada Fake LTDA
               funcionarios:
                 - ca4b9bfb-97bc-4055-876f-b019f0357f7c
@@ -52,4 +52,15 @@ endpoints:
               - name: status_code_is_200
                 assert: ${{ response.status_code == 200 }}
 
+
+          - name: Criar Funcionario
+            path: criar-funcionarios/
+            method: post
+            tests:
+              - name: status_code_is_201
+                assert: ${{ response.status_code == 201 }}
+
+            body:
+              nome_sobrenome: Stringus Stringado String
+              email: string@example.com
 
