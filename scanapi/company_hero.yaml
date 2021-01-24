@@ -1,0 +1,55 @@
+endpoints:
+  - name: Company Hero Test
+    path:  ${BASE_URL}
+    requests:
+      - name: home
+        method: get
+        path: /
+        tests:
+          - name: status_code_is_404
+            assert: ${{ response.status_code == 404 }}
+
+    endpoints:
+      - name: Empresas
+        path: empresas/
+        requests:
+          - name: Listar Empresas
+            path: listar-empresas/
+            method: get
+            tests:
+              - name: status_code_is_200
+                assert: ${{ response.status_code == 200 }}
+
+          - name: Criar Empresas
+            path: criar-empresas/
+            method: post
+            tests:
+              - name: status_code_is_201
+                assert: ${{ response.status_code == 201 }}
+
+            body:
+              cnpj: 74503361000187
+              razao_social: Uma Empresa de Fachada Fake LTDA
+              funcionarios:
+                - ca4b9bfb-97bc-4055-876f-b019f0357f7c
+                - 206633f6-62f8-4ddb-b081-9e95d58ca0bc
+
+      - name: Funcionarios
+        path: funcionarios/
+        requests:
+          - name: Listar Funcionarios
+            path: listar-funcionarios/
+            method: get
+            tests:
+              - name: status_code_is_200
+                assert: ${{ response.status_code == 200 }}
+
+
+          - name: Detalhar Funcionario
+            path: detalhes-funcionario/ca4b9bfb-97bc-4055-876f-b019f0357f7c/
+            method: get
+            tests:
+              - name: status_code_is_200
+                assert: ${{ response.status_code == 200 }}
+
+

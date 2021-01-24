@@ -7,7 +7,7 @@ app_name = 'empresas'
 
 router = routers.DefaultRouter()
 router.register(r'criar-empresas', CriarEmpresaViewSet, basename='criar-empresas')
-router.register(r'buscar-empresas', GetEmpresaViewSet, basename='buscar-empresas')
+router.register(r'listar-empresas', GetEmpresaViewSet, basename='buscar-empresas')
 
 urlpatterns = [
     path(r'', include(router.urls)),
