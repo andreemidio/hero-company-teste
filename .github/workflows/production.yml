@@ -1,4 +1,4 @@
-name: Company Hero Test Backend Production CI
+name: Company Hero Test Backend CI
 
 on:
   pull_request:
