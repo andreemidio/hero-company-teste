@@ -37,13 +37,14 @@ Para facilitar o deploy da aplicação, no github vá em actions, coloquei um CI
 
 Todo esse ambiente eu criei e produzi com o *Pipenv* para isolar ao máximo as dependências do projeto.
 
-Para acessar a aplicação acesse [hero-company-teste](https://hero-company-teste.herokuapp.com/)
+Para acessar a aplicação na raiz acesse [hero-company-teste](https://hero-company-teste.herokuapp.com/)
 
 Disponibilizei uma documentação auxiliar para facilitar o entendimento que está
 em [Swagger](https://hero-company-teste.herokuapp.com/swagger)
 e [Redoc](https://hero-company-teste.herokuapp.com/redoc/)
 
 Para fazer testes simples como o [Postman](https://documenter.getpostman.com/view/10291528/TW6tLVHU)
+Ao abrir a página , no canto superior direito, há um botão para abrir a ferramenta *Postman* automaticamente e já configurada com o ambiente pronto.
 
 Caso queira acessar o [banco de dados](https://hero-company-teste.herokuapp.com/lotus/)  use:
 
