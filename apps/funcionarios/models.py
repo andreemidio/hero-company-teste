@@ -57,3 +57,4 @@ class Funcionarios(AbstractBaseUser, PermissionsMixin):
         verbose_name = 'Funcionario'
         verbose_name_plural = 'Funcionarios'
         ordering = ['data_criacao']
+

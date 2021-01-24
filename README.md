@@ -21,5 +21,10 @@ Para fazer testes simples como o [Postman](https://documenter.getpostman.com/vie
 
 Caso queira acessar o [banco de dados](https://hero-company-teste.herokuapp.com/lotus/)  use:
 
+<<<<<<< HEAD
 Login : andre.emidio@companyhero.com Senha : sWVWL0$L#&Cf0
+=======
+Login : andre.emidio@companyhero.com
+Senha : sWVWL0$L#&Cf0
+>>>>>>> 397ba5b1798ce8ee277abc38a6056c84a49b2395
 
