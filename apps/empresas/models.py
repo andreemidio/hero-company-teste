@@ -9,7 +9,7 @@ from apps.funcionarios.models import Funcionarios
 
 class Empresas(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    cnpj = models.CharField(max_length=17, db_index=True)
+    cnpj = models.CharField(max_length=14, db_index=True)
     razao_social = models.CharField(max_length=255)
     data_criacao = models.DateTimeField(auto_now_add=True)
     funcionarios = SortedManyToManyField(Funcionarios)
@@ -23,4 +23,4 @@ class Empresas(models.Model):
     class Meta:
         verbose_name = 'Empresa'
         verbose_name_plural = 'Empresas'
-        ordering = ['-data_criacao']
+        ordering = ['data_criacao']

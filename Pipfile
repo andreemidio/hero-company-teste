@@ -6,7 +6,7 @@ name = "pypi"
 [packages]
 django = "*"
 djangorestframework = "*"
-drf-yasg = {extras = ["validation"], version = "*"}
+drf-yasg = { extras = ["validation"], version = "*" }
 django-sortedm2m = "*"
 dj-database-url = "*"
 python-decouple = "*"

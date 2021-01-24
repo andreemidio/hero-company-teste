@@ -56,4 +56,5 @@ class Funcionarios(AbstractBaseUser, PermissionsMixin):
     class Meta:
         verbose_name = 'Funcionario'
         verbose_name_plural = 'Funcionarios'
-        ordering = ['-data_criacao']
+        ordering = ['data_criacao']
+
