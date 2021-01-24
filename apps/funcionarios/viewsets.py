@@ -1,5 +1,5 @@
 from rest_framework import mixins
-from rest_framework.generics import ListAPIView
+from rest_framework.generics import RetrieveAPIView, get_object_or_404
 from rest_framework.viewsets import GenericViewSet
 
 from apps.funcionarios.models import Funcionarios
@@ -22,7 +22,12 @@ class GetFuncionariosViewSet(mixins.RetrieveModelMixin, GenericViewSet):
     queryset = Funcionarios.objects.all()
 
 
-class GetFuncionariosEmpresasViewSet(ListAPIView):
+class GetFuncionariosEmpresasViewSet(RetrieveAPIView):
     queryset = Funcionarios.objects.all()
     serializer_class = GetFuncionariosEmpresasSerializer
     filter_fields = ['nome_sobrenome']
+
+    def get_object(self):
+        queryset = self.get_queryset()
+        obj = get_object_or_404(queryset, id=pk)
+        return obj

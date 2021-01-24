@@ -20,6 +20,3 @@ class GetEmpresasSerializer(serializers.ModelSerializer):
     class Meta:
         model = Empresas
         fields = ('id', 'cnpj', 'razao_social', 'data_criacao', 'funcionarios')
-
-
-

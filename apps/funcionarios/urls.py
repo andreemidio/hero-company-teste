@@ -17,5 +17,6 @@ router.register(r'detalhes-funcionario', GetFuncionariosViewSet, basename='detal
 
 urlpatterns = [
     path(r'', include(router.urls)),
-    path('detalhes-funcionario-empresa/', GetFuncionariosEmpresasViewSet.as_view(), name="detalhes-funcionario-empresa"),
+    path('detalhes-funcionario-empresa/', GetFuncionariosEmpresasViewSet.as_view(),
+         name="detalhes-funcionario-empresa"),
 ]
