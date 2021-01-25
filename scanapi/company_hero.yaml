@@ -28,7 +28,7 @@ endpoints:
                 assert: ${{ response.status_code == 201 }}
 
             body:
-              cnpj: 74503361000167
+              cnpj: 74503361000187
               razao_social: Uma Empresa de Fachada Fake LTDA
               funcionarios:
                 - ca4b9bfb-97bc-4055-876f-b019f0357f7c
