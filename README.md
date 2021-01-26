@@ -49,7 +49,7 @@ e [Redoc](https://hero-company-teste.herokuapp.com/redoc/)
 Para fazer testes simples como o [Postman](https://documenter.getpostman.com/view/10291528/TW6tLVHU)
 ao abrir a página , no canto superior direito, há um botão para abrir a ferramenta *Postman* automaticamente e já configurada com o ambiente pronto.
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/ce6593f96dd5aec19237)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/bd578ba3868f550f4f4a)
 
 Caso queira acessar o [banco de dados](https://hero-company-teste.herokuapp.com/lotus/)  use:
 
